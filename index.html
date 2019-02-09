@@ -15,7 +15,11 @@
 	<div class = "Container">
 		<h1>TODO List</h1>
 		<p>A place to store things you have to do</p>
+<<<<<<< HEAD
 			<input ng-model = "search" class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
+=======
+			<input class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
+>>>>>>> parent of c3014e7... fail
 			
 			<form>
 				<ol ng-model = "idx" class = "items">
@@ -23,7 +27,11 @@
 					
 						<button class = "completeButton borderRad" ng-click = "c.isComplete = true" ng-if = "c.isComplete == false" >complete</button>
 						
+<<<<<<< HEAD
 						<p contenteditable = "true" ng-class = "{complete: c.isComplete}" class = "line">{{c.todo}}</p>
+=======
+						<p ng-class = "{complete: c.isComplete}" class = "line">{{c.todo}}</p>
+>>>>>>> parent of c3014e7... fail
 						
 						<button ng-click = "$ctrl.delet($index)" class = "close centerY"><i class="material-icons">close</i></button>
 						

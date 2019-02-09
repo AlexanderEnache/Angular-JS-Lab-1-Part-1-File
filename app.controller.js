@@ -24,12 +24,15 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 		
 	}
 	
+<<<<<<< HEAD
 	vm.change = function(chg, idx){
 		
 		vm.Todos[idx].todo = chg;
 		
 	}
 	
+=======
+>>>>>>> parent of c3014e7... fail
 	/* 	vm.Todos.push({
 			todo: "feed fish",
 			isComplete: false
@@ -51,5 +54,9 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 			isComplete: false
 		}); */
 		
+<<<<<<< HEAD
 });
 
+=======
+});
+>>>>>>> parent of c3014e7... fail
