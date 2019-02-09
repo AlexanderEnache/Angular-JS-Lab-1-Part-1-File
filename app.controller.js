@@ -8,14 +8,19 @@
 angular.module("todoApp", []).controller("TodoController", function ($scope){
 	const vm = this;
 	
+	vm.clicked = false;
+	
 	vm.Todos = [];
 	
 	vm.add = function(item){
 		
 		vm.Todos.push({
 			todo: item,
-			isComplete: false
+			isComplete: false,
+			clicked : false
 		});
+		
+		$scope.newItem = "";
 		
 	}
 	
@@ -24,7 +29,23 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 		vm.Todos.splice(idx, 1);
 		
 	}
-	
+		
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	/* 	vm.Todos.push({
 			todo: "feed fish",
 			isComplete: false
@@ -45,5 +66,11 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 			todo: "wash dishes",
 			isComplete: false
 		}); */
-		
-});
+
+
+
+
+
+
+
+

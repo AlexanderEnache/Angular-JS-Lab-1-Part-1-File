@@ -16,15 +16,15 @@
 	<div class = "Container">
 		<h1>TODO List</h1>
 		<p>A place to store things you have to do</p>
-			<input class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
-			
+			<input ng-model = "search" class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
+			<!-- | filter:search | orderBy: 'todo'  -->
 			<form>
 				<ol ng-model = "idx" class = "items">
-					<li class = "widthFull centerY" ng-repeat = "c in $ctrl.Todos">
+					<li class = "widthFull centerY" ng-repeat = "c in $ctrl.Todos | filter:search | orderBy: 'todo'">
 					
 						<button class = "completeButton borderRad" ng-click = "c.isComplete = true" ng-if = "c.isComplete == false" >complete</button>
 						
-						<p ng-class = "{complete: c.isComplete}" class = "line">{{c.todo}}</p>
+						<p contenteditable = "true" ng-class = "{complete: c.isComplete}" class = "line"></p>{{c.todo}}</p>
 						
 						<button ng-click = "$ctrl.delet($index)" class = "close centerY"><i class="material-icons">close</i></button>
 						
