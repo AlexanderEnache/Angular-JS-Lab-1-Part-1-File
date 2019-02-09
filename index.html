@@ -15,7 +15,7 @@
 	<div class = "Container">
 		<h1>TODO List</h1>
 		<p>A place to store things you have to do</p>
-			<input class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
+			<input ng-model = "search" class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
 			
 			<form>
 				<ol ng-model = "idx" class = "items">

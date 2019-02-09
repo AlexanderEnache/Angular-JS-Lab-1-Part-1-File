@@ -24,6 +24,12 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 		
 	}
 	
+	vm.change = function(chg, idx){
+		
+		vm.Todos[idx].todo = chg;
+		
+	}
+	
 	/* 	vm.Todos.push({
 			todo: "feed fish",
 			isComplete: false
