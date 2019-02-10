@@ -23,7 +23,7 @@
 					
 						<button class = "completeButton borderRad" ng-click = "c.isComplete = true" ng-if = "c.isComplete == false" >complete</button>
 						
-						<p contenteditable = "true" ng-blur = "$ctrl.change($index, $event)" class = "line borderless">{{c.todo}}</p>
+						<p ng-class = "{complete: c.isComplete}" contenteditable = "true" ng-blur = "$ctrl.change($index, $event)" class = "line borderless">{{c.todo}}</p>
 						
 						<button ng-click = "$ctrl.delet($index)" class = "close centerY"><i class="material-icons">close</i></button>
 						
@@ -32,13 +32,13 @@
 			</form>
 			
 		<div class = "bottom">
-			<input class = "widthFull borderRad" ng-model = "newItem" type = "textbox" placeholder = "Add your todos">
+			<input ng-keypress = "$ctrl.triggerAdd($event)" class = "widthFull borderRad" ng-model = "newItem" type = "textbox" placeholder = "Add your todos">
 			<br>
 			<button class = "widthFull borderRad Add" ng-click = "$ctrl.add(newItem)">Add</button>
 		</div>
 		
 	</div>
-		<script src = "../../../scriptTools/angular.js"></script>
+		<script src = "https://code.angularjs.org/1.6.5/angular.js"></script>
 		<script src = "app.module.js"></script>
 		<script src = "app.controller.js"></script>
 		

@@ -11,24 +11,38 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 	
 	vm.add = function(item){
 		
+		if(item == "")
+			return;
+		
 		vm.Todos.push({
 			todo: item,
 			isComplete: false
 		});
 		
-		$scope.newItem = ""
+		$scope.newItem = "";
 		
 	}
 	
 	vm.delet = function(idx){
 		
 		vm.Todos.splice(idx, 1);
+		vm.Todos[idx].isComplete = true;
 		
 	}
 	
-	vm.change = function(evt){
+	vm.change = function(idx, evt){
 		
-		console.log(evt.target.textContent);	
+		vm.Todos[idx].todo = evt.target.innerText;
+		
+	}
+	
+	vm.triggerAdd = function(e){
+		
+		if(e.keyCode == '13'){
+			
+			vm.add($scope.newItem);
+			
+		}
 		
 	}
 		
