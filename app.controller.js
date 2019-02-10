@@ -1,4 +1,3 @@
-
 // Lab 11
 
 "use strict";
@@ -17,6 +16,8 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 			isComplete: false
 		});
 		
+		$scope.newItem = ""
+		
 	}
 	
 	vm.delet = function(idx){
@@ -25,25 +26,11 @@ angular.module("todoApp", []).controller("TodoController", function ($scope){
 		
 	}
 	
-	/* 	vm.Todos.push({
-			todo: "feed fish",
-			isComplete: false
-		});
-		vm.Todos.push({
-			todo: "water plants",
-			isComplete: false			
-		});
-		vm.Todos.push({
-			todo: "clean bong",
-			isComplete: false			
-		});
-		vm.Todos.push({
-			todo: "drink beer",
-			isComplete: false
-		});
-		vm.Todos.push({
-			todo: "wash dishes",
-			isComplete: false
-		}); */
+	vm.change = function(evt){
+		
+		console.log(evt.target.textContent);	
+		
+	}
 		
 });
+

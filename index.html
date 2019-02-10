@@ -1,30 +1,29 @@
-
 <!-- // Lab 11 -->
 
 <!DOCTYPE html>
 
 <html ng-app = "todoApp">
 	<head>
-		<title> Shit </title>
+		<title> TODO </title>
 		<link rel = "stylesheet" style = "text/style" href = "style.css">
 		<link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
-	</head>																	<!-- disabled, repeat -->
+	</head>
 	<body ng-controller = "TodoController as $ctrl">
 	
 	<div class = "Container">
 		<h1>TODO List</h1>
 		<p>A place to store things you have to do</p>
-			<input class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
+			<input ng-model = "search" class = "widthFull borderRad marg" type = "textbox" placeholder = "Filter your todos">
 			
 			<form>
 				<ol ng-model = "idx" class = "items">
-					<li class = "widthFull centerY" ng-repeat = "c in $ctrl.Todos">
+					<li class = "widthFull centerY" ng-repeat = "c in $ctrl.Todos | filter:search | orderBy: c.todo">
 					
 						<button class = "completeButton borderRad" ng-click = "c.isComplete = true" ng-if = "c.isComplete == false" >complete</button>
 						
-						<p ng-class = "{complete: c.isComplete}" class = "line">{{c.todo}}</p>
+						<p contenteditable = "true" ng-blur = "$ctrl.change($index, $event)" class = "line borderless">{{c.todo}}</p>
 						
 						<button ng-click = "$ctrl.delet($index)" class = "close centerY"><i class="material-icons">close</i></button>
 						
@@ -39,11 +38,12 @@
 		</div>
 		
 	</div>
-		<script src = "../../scriptTools/angular.js"></script>
+		<script src = "../../../scriptTools/angular.js"></script>
 		<script src = "app.module.js"></script>
 		<script src = "app.controller.js"></script>
 		
 	</body>
 
 </html>
+
 
